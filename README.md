@@ -6,6 +6,6 @@ Klassikale html pagina met alle leerlingen
 * JMO
 * L1Z4
 * Thiebe
-
+* RB
 * PludotGames
 
