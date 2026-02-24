@@ -166,16 +166,15 @@ li a:hover:not(.active) { background-color: #555555; color: white; }
 
 <div id="about" class="page">
   <h2>Not here</h2>
-  <iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/k85mRPqvMbE" 
-    frameborder="0" allowfullscreen>
-  </iframe>
+  <video controls>
+  <source src=https://rbrb.s-ul.eu/hQgB6SWX>
+</video>
 </div>
 
 <div id="other" class="page">
   <h2>Other people are here</h2>
   <a href="index.html" class="button">HOME</a><br>
-  <a href="Ben.vannoten.html" class="button">BVN</a><br>
+  <a href="Ben.html" class="button">BVN</a><br>
   <a href="jan.html" class="button">JaM</a><br>
   <a href="joel.html" class="button">JoM</a><br>
   <a href="Liza.html" class="button">YK</a><br>
@@ -185,6 +184,7 @@ li a:hover:not(.active) { background-color: #555555; color: white; }
 </div>
 
 <script>
+  
   function showPage(pageId, clickedLink) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('li a').forEach(a => a.classList.remove('active'));
