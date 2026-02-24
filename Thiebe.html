@@ -75,7 +75,7 @@ button:hover {
   <a href="joel.html">Joel</a>
   <a href="Thiebe.html">Thiebe</a>
   <a href="ludo.html">Ludo</a>
-  <a href="Ben.vannoten.html">Ben</a>
+  <a href="Ben.html">Ben</a>
 </div>
 
 <!-- ===== CONTENT ===== -->
@@ -88,27 +88,57 @@ button:hover {
 
 <script>
 const jokes = [
-    "Waarom kunnen programmeurs niet zwemmen? Omdat ze bang zijn voor bugs.",
-    "Waarom nam de computer een bril? Om zijn website beter te zien.",
-    "Wat zegt een JavaScript-bestand na een lange dag? Ik ben uitgeput.",
-    "Waarom houden programmeurs van donkere modus? Omdat het licht bugs aantrekt.",
-    "Hoe noemt een programmeur zijn hond? byte.",
-    "Waarom ging de developer naar therapie? Te veel onopgeloste issues.",
-    "Wat is het favoriete drankje van een programmeur? Java.",
-    "Waarom werkte de website niet? Hij had een midlife CSS.",
-    "Ik zou een UDP-grap maken... maar ik weet niet zeker of je hem ontvangt.",
-    "Waarom was de computer koud? Hij had zijn Windows open.",
-    "Wat is het verschil tussen een programmeur en een pizzabezorger? De pizzabezorger kan zijn familie wél voeden.",
-    "Waarom gebruiken programmeurs altijd kerstverlichting? Omdat ze van debugging houden.",
-    "Wat zegt HTML tegen CSS? Zonder mij stel jij niets voor.",
-    "Waarom was de programmeur blut? Omdat hij zijn cache had geleegd.",
-    "Waarom zijn programmeurs slecht in relaties? Ze committen te vaak zonder te testen.",
-    "Wat is de favoriete muziek van een developer? Algo-ritme.",
-    "Waarom kunnen developers niet stoppen met werken? Omdat ze verslaafd zijn aan ctrl + s.",
-    "Waarom was de server verdrietig? Hij voelde zich down.",
-    "Wat zei de 0 tegen de 1? Zonder jou ben ik niets.",
-    "Waarom werd de computer boos? Iemand drukte zijn knoppen in."
-];
+    "Why can’t programmers swim? Because they’re afraid of bugs.",
+"Why did the computer get glasses? To improve its website.",
+"What does a JavaScript file say after a long day? I’m exhausted.",
+"Why do programmers love dark mode? Because light attracts bugs.",
+"What does a programmer name his dog? Byte.",
+"Why did the developer go to therapy? Too many unresolved issues.",
+"What’s a programmer’s favorite drink? Java.",
+"Why didn’t the website work? It had a midlife CSS.",
+"I’d make a UDP joke… but I’m not sure you’d get it.",
+"Why was the computer cold? It left its Windows open.",
+"What’s the difference between a programmer and a pizza delivery driver? The pizza driver can actually feed a family.",
+"Why do programmers love Christmas lights? Because they enjoy debugging.",
+"What did HTML say to CSS? Without me, you’re nothing.",
+"Why was the programmer broke? Because he cleared his cache.",
+"Why are programmers bad at relationships? They commit too often without testing.",
+"What’s a developer’s favorite music? Algo-rhythm.",
+"Why can’t developers stop working? They’re addicted to Ctrl + S.",
+"Why was the server sad? It felt down.",
+"What did 0 say to 1? Without you, I’m nothing.",
+"Why was the computer angry? Someone kept pushing its buttons.",
+"Why do Java developers wear glasses? Because they don’t C#.",
+"There are only 10 types of people in the world: those who understand binary and those who don’t.",
+"A SQL query walks into a bar, walks up to two tables and asks: Can I join you?",
+"Why did the programmer quit his job? Because he didn’t get arrays.",
+"Why do Python programmers prefer snakes? Because they don’t like C++.",
+"Debugging: Being the detective in a crime movie where you are also the murderer.",
+"Why did the function return early? Because it had a timeout.",
+"Why was the developer calm? Because he had exception handling.",
+"I changed my password to 'incorrect'. So whenever I forget it, the computer tells me: Your password is incorrect.",
+"Why did the computer go to the doctor? It caught a virus.",
+"Why don’t programmers like nature? Too many bugs.",
+"Real programmers count from 0.",
+"Why was the array always calm? It had stable indexes.",
+"Why do front-end developers love parties? They know how to style things.",
+"Why did the backend developer break up? Too many unresolved dependencies.",
+"Why do programmers hate stairs? Because they prefer recursion.",
+"Why did Git break up with SVN? It found someone more committed.",
+"Hardware: The part of a computer you can kick.",
+"Why was the code so confident? It had high self-esteem (self = true).",
+"I would tell you a joke about pointers, but you might not get the reference.",
+"Why did the developer cross the road? To refactor the other side.",
+"Why was the Boolean always calm? Because it kept things true or false.",
+"Why don’t programmers play hide and seek? Because good luck hiding when they can always find you.",
+"Why did the CSS file feel stressed? It had too many classes.",
+"Why was the API tired? Too many requests.",
+"Why do programmers love coffee? Because it helps with Java.",
+"Why was the loop afraid? It didn’t know when to stop.",
+"Why did the database administrator leave his partner? There was no connection.",
+"Why was the smartphone wearing glasses? It lost its contacts."
+
+]; 
 
 function showJoke() {
     const randomIndex = Math.floor(Math.random() * jokes.length);
