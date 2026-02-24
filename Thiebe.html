@@ -1,68 +1,103 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <title>Basic Fun Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-            margin: 0;
-            padding: 40px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Basic Fun Page</title>
 
-        .container {
-            background: white;
-            padding: 30px;
-            max-width: 500px;
-            margin: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cdddf2;
+    margin: 0;
+}
 
-        button {
-            padding: 10px 15px;
-            font-size: 14px;
-            border: 1px solid #333;
-            background: #333;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+/* ===== NAVBAR ===== */
+.navbar {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ccc;
+}
 
-        button:hover {
-            opacity: 0.8;
-        }
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-        #joke {
-            margin-top: 20px;
-            font-style: italic;
-        }
-    </style>
+.navbar a:hover {
+  background-color: #ddd;
+}
+
+/* ===== PAGE STYLE ===== */
+.container {
+    background: white;
+    padding: 30px;
+    max-width: 500px;
+    margin: 60px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 1px solid #333;
+    background: #333;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#joke {
+    margin-top: 20px;
+    font-style: italic;
+}
+</style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Welkom</h1>
-        <p>Klik op de knop voor een random grap.</p>
-        <button onclick="showJoke()">Toon grap</button>
-        <p id="joke"></p>
-    </div>
+<!-- ===== NAVBAR ===== -->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="RB.html">Rik</a>
+  <a href="Vince.html">Vince</a>
+  <a href="Liza.html">Liza</a>
+  <a href="joel.html">Joel</a>
+  <a href="Thiebe.html">Thiebe</a>
+  <a href="ludo.html">Ludo</a>
+  <a href="Ben.vannoten.html">Ben</a>
+</div>
 
-    <script>
-        const jokes = [
-            "Waarom kunnen programmeurs niet zwemmen? Omdat ze bang zijn voor bugs.",
-            "Waarom nam de computer een bril? Om zijn website beter te zien.",
-            "Wat zegt een JavaScript-bestand na een lange dag? Ik ben uitgeput."
-        ];
+<!-- ===== CONTENT ===== -->
+<div class="container">
+    <h1>Welkom</h1>
+    <p>Klik op de knop voor een random grap.</p>
+    <button onclick="showJoke()">Toon grap</button>
+    <p id="joke"></p>
+</div>
 
-        function showJoke() {
-            const randomIndex = Math.floor(Math.random() * jokes.length);
-            document.getElementById("joke").innerText = jokes[randomIndex];
-        }
-    </script>
+<script>
+const jokes = [
+    "Waarom kunnen programmeurs niet zwemmen? Omdat ze bang zijn voor bugs.",
+    "Waarom nam de computer een bril? Om zijn website beter te zien.",
+    "Wat zegt een JavaScript-bestand na een lange dag? Ik ben uitgeput."
+];
+
+function showJoke() {
+    const randomIndex = Math.floor(Math.random() * jokes.length);
+    document.getElementById("joke").innerText = jokes[randomIndex];
+}
+</script>
 
 </body>
 </html>
