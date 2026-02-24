@@ -2,23 +2,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>joel</title>
+    <title>the greatest site of all time</title>
 </head>
 <html>
 <style>
 
+body {
+    font-family: Arial;
+    background-color: #cdddf2;
+    }
 
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
 }
 
+/* Style the buttons inside the tab */
 .tab button {
   background-color: inherit;
   float: left;
@@ -40,28 +41,124 @@
   background-color: #ccc;
 }
 
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.video-container {
+    display: flex;
+     justify-content: center;
+    align-items: center;
+}
+
 body {
   background-color: rgb(112, 116, 168);
 }
-
-
-
 </style>
 
 <body>
+  <div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Home')">Home</button>
+  <button class="tablinks" onclick="openCity(event, 'Rik')">Rik</button>
+  <button class="tablinks" onclick="openCity(event, 'Vince')">Vince</button>
+  <button class="tablinks" onclick="openCity(event, 'Liza')">Liza</button>
+  <button class="tablinks" onclick="openCity(event, 'Joel')">Joel</button>
+  <button class="tablinks" onclick="openCity(event, 'Thiebe')">Thiebe</button>
+  <button class="tablinks" onclick="openCity(event, 'Ludo')">Ludo</button>
+  <button class="tablinks" onclick="openCity(event, 'Ben')">Ben</button>
+</div>
 
-<p class="center">holy masterclass</p>
-<div class="center"></div>
+
+<h1 class="center">CLIP CENTRAL</h1>
+
+
+<p class="center">w osu gameplay</p>
+<div class="video-container"></div>
 <video controls>
-  <source src=https://jeacwe.s-ul.eu/4VdQAOvm >
+  <source src=https://jeacwe.s-ul.eu/4VdQAOvm>
 </video>
 </div>
+
+<p class="center">ancient brawlhalla clip</p>
+<div class="video-container"></div>
+<video controls >
+  <source src=https://jeacwe.s-ul.eu/YtuR9NnY>
+</video>
+</div>
+
+
+<div id="Home" class="tabcontent">
+  <h3>Deze webpagina wordt gemaakt door de leerlingen van 6ICW</h3>
+  <p>Met Github kunnen we samenwerken aan een website. 
+    Elke leerling heeft een eigen tabblad met een link naar zijn pagina.
+  </p>
+  <p>
+    Ook je leerkracht heeft <a href="jan.html">een link</a> naar zijn testpagina
+  </p>
+</div>
+
+<div id="Rik" class="tabcontent">
+  <h3>Dit is het tabblad van Rik</h3>
+  <p>Via deze link kom je op de pagina van Rik: <a href="RB.html">Rik's Page</a></p> 
+</div>
+
+<div id="Vince" class="tabcontent">
+  <h3>Hey</h3>
+  <p>Via deze link kom je op de pagina van Vince: <a href="Vince.html">Vince's Page</a></p>
+</div>
+
+<div id="Liza" class="tabcontent">
+  <h3>Zdravstvujtye</h3>
+  <p>Via deze link kom je op de pagina van Liza: <a href="Liza.html">Liza's Page</a></p>
+</div>
+
+
+<div id="Joel" class="tabcontent">
+  <h3>Hey</h3>
+  <p>Via deze link kom je op de pagina van Joel: <a href="joel.html">Joel's Page</a></p>
+</div>
+
+
+<div id="Thiebe" class="tabcontent">
+  <h3>Hey</h3>
+  <p>Via deze link kom je op de pagina van Thiebe: <a href="Thiebe.html">Thiebe's Page</a></p>
+</div>
+
+<div id="Ludo" class="tabcontent">
+  <h3>ludoScafé</h3>
+  <p>Via deze link kom je op de pagina van ludoScafé: <a href="ludo.html">Ludo's Page</a></p>
+</div>
+
+<div id="Ben" class="tabcontent">
+  <h3>Hello there</h3>
+  <p>Via <a href="Ben.vannoten.html">deze link</a> kom je op de pagina van Ben</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 
 </body>
 </html>
