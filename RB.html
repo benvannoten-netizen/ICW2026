@@ -28,6 +28,9 @@ li a:hover:not(.active) { background-color: #555555; color: white; }
 
 .page { display: none; margin-left: 130px; padding: 1px 16px; min-height: 1000px; }
 .page.active { display: block; }
+
+.button { background-color: #1c87c9; border: none; color: white; padding: 20px 34px; text-align: center; text-decoration: none; display: inline-block; font-size: 20px; margin: 4px 2px; cursor: pointer; }
+
 </style>
 </head>
 <body>
@@ -38,6 +41,7 @@ li a:hover:not(.active) { background-color: #555555; color: white; }
   <li><a href="#" onclick="showPage('news', this)">Crazy</a></li>
   <li><a href="#" onclick="showPage('contact', this)">Crazy</a></li>
   <li><a href="#" onclick="showPage('about', this)">Crazy</a></li>
+  <li><a href="#" onclick="showPage('other', this)">Crazy</a></li>
 </ul>
 
 <div id="home" class="page">
@@ -166,6 +170,18 @@ li a:hover:not(.active) { background-color: #555555; color: white; }
     src="https://www.youtube.com/embed/k85mRPqvMbE" 
     frameborder="0" allowfullscreen>
   </iframe>
+</div>
+
+<div id="other" class="page">
+  <h2>Other people are here</h2>
+  <a href="index.html" class="button">HOME</a><br>
+  <a href="Ben.vannoten.html" class="button">BVN</a><br>
+  <a href="jan.html" class="button">JaM</a><br>
+  <a href="joel.html" class="button">JoM</a><br>
+  <a href="Liza.html" class="button">YK</a><br>
+  <a href="ludo.html" class="button">LV</a><br>
+  <a href="Thiebe.html" class="button">TP</a><br>
+  <a href="Vince.html" class="button">VG</a><br>
 </div>
 
 <script>
