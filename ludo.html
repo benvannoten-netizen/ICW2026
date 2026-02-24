@@ -3,153 +3,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LudoSCafé</title>
-
+    <title>LudosCafé</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --deep: #1a0a00;
+            --brown: #3d1f00;
+            --amber: #c8741a;
+            --gold: #e8a830;
+            --cream: #f5e9d0;
+            --light: #fdf6ec;
+            --accent: #8b2500;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #b9cff2, #e8f0ff);
-            margin: 0;
-            padding: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--deep);
+            color: var(--cream);
+            min-height: 100vh;
         }
 
-        /* Header */
-        .header {
-            background-color: #2c3e50;
-            padding: 20px;
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--deep) 0%, var(--brown) 60%, var(--accent) 100%);
+            padding: 40px 0 0;
             text-align: center;
-            color: white;
-            font-size: 32px;
-            font-weight: bold;
-            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Navbar */
-        .tab {
+        header::before {
+            content: '';
+            position: absolute;
+            top: -60px; left: -60px;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(200,116,26,0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -80px; right: -40px;
+            width: 250px; height: 250px;
+            background: radial-gradient(circle, rgba(139,37,0,0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .logo-wrap {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+
+        .logo-wrap .pre {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            letter-spacing: 8px;
+            font-size: 13px;
+            color: var(--gold);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            color: var(--light);
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+
+        h1 span {
+            color: var(--gold);
+        }
+
+        .tagline {
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: var(--amber);
+            text-transform: uppercase;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        /* NAVBAR */
+        nav {
+            margin-top: 30px;
+            background: rgba(0,0,0,0.35);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(200,116,26,0.3);
             display: flex;
-            background-color: #34495e;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--cream);
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 16px 22px;
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+            background: rgba(200,116,26,0.08);
+        }
+
+        /* MAIN */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            height: 2px;
+            background: linear-gradient(90deg, var(--amber), transparent);
+            margin-top: 6px;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--amber);
+            margin-bottom: 36px;
+            font-weight: 300;
+        }
+
+        /* MENU GRID */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+            margin-top: 10px;
+        }
+
+        .menu-card {
+            background: linear-gradient(145deg, rgba(61,31,0,0.7) 0%, rgba(26,10,0,0.9) 100%);
+            border: 1px solid rgba(200,116,26,0.25);
+            border-radius: 2px;
+            padding: 28px 24px;
+            position: relative;
             overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
         }
 
-        .tab a button {
-            background-color: inherit;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 16px 20px;
-            color: white;
-            font-size: 17px;
-            transition: 0.3s;
+        .menu-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(232,168,48,0.5);
         }
 
-        .tab a button:hover {
-            background-color: #2c3e50;
+        .menu-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 3px; height: 100%;
+            background: linear-gradient(180deg, var(--gold), var(--accent));
         }
 
-        .tab a button.active {
-            background-color: #1abc9c;
+        .menu-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--gold);
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(200,116,26,0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        /* Content */
-        .content {
-            padding: 30px;
-            max-width: 900px;
-            margin: auto;
+        .menu-card-title .icon {
+            font-size: 1.1rem;
         }
 
-        h2 {
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 0;
+            font-size: 0.93rem;
+            color: var(--cream);
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .menu-item:last-child { border-bottom: none; }
+
+        .menu-item::before {
+            content: '—';
+            color: var(--amber);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        /* DIVIDER */
+        .divider {
             text-align: center;
-            margin-top: 40px;
-            color: #2c3e50;
+            margin: 60px 0 50px;
+            color: var(--amber);
+            letter-spacing: 6px;
+            font-size: 11px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
 
-        /* Menu Table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 25px;
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(200,116,26,0.4), transparent);
         }
 
-        th {
-            background-color: #1abc9c;
-            color: white;
-            padding: 12px;
-            font-size: 20px;
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 12px;
+            color: rgba(245,233,208,0.3);
+            letter-spacing: 2px;
+            border-top: 1px solid rgba(200,116,26,0.1);
         }
-
-        td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-            font-size: 17px;
-        }
-
-        tr:hover {
-            background-color: #f2f2f2;
-        }
-
     </style>
 </head>
-
 <body>
 
-    <div class="header">Welkom bij LudoSCafé</div>
+<header>
+    <div class="logo-wrap">
+        <span class="pre">Welkom bij</span>
+        <h1>Ludo<span>S</span>Café</h1>
+    </div>
+    <p class="tagline">Sfeer · Smaak · Gezelligheid · goodvibes </p>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="RB.html">Rik</a>
+        <a href="Vince.html">Vince</a>
+        <a href="Liza.html">Liza</a>
+        <a href="joel.html">Joel</a>
+        <a href="Thiebe.html">Thiebe</a>
+        <a href="Ben.vannoten.html">Ben</a>
+    </nav>
+</header>
 
-    <div class="tab">
-        <a href="index.html"><button class="active">Home</button></a>
-        <a href="RB.html"><button>Rik</button></a>
-        <a href="Vince.html"><button>Vince</button></a>
-        <a href="Liza.html"><button>Liza</button></a>
-        <a href="joel.html"><button>Joel</button></a>
-        <a href="Thiebe.html"><button>Thiebe</button></a>
-        <a href="Ben.vannoten.html"><button>Ben</button></a>
+<main>
+
+   <!-- AANBOD -->
+    <div style="margin-bottom: 10px;">
+        <div class="section-title">Ons Aanbod</div>
+    </div>
+    <p class="section-subtitle">Menukaart</p>
+
+    <div class="menu-grid">
+
+        <!-- Softdrinks -->
+        <div class="menu-card">
+            <div class="menu-card-title"><span class="icon">🥤</span> Softdrinks</div>
+            <div class="menu-item"><span class="menu-item-name">Cola</span><span class="menu-item-price">4,00 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">Fanta</span><span class="menu-item-price">3,00 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">Sprite</span><span class="menu-item-price">2,00 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">Schweppes</span><span class="menu-item-price">5,00 €</span></div>
+        </div>
+
+        <!-- Cocktails -->
+        <div class="menu-card">
+            <div class="menu-card-title"><span class="icon">🍹</span> Cocktails</div>
+            <div class="menu-item"><span class="menu-item-name">De Stoner</span><span class="menu-item-price">4,20 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">De Scoffe</span><span class="menu-item-price">6,70 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">Piña Colada</span><span class="menu-item-price">8,00 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mai Tai</span><span class="menu-item-price">6,00 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mai Tai Infusion</span><span class="menu-item-price">9,50 €</span></div>
+        </div>
+
+        <!-- Mocktails -->
+        <div class="menu-card">
+            <div class="menu-card-title"><span class="icon">🍊</span> Mocktails</div>
+            <div class="menu-item"><span class="menu-item-name">Piña Colada ZA</span><span class="menu-item-price">6,00 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">Dikke Loser</span><span class="menu-item-price">8,00 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">Ik Geloof Niet in Alcohol</span><span class="menu-item-price">2,00 €</span></div>
+        </div>
+
+        <!-- Voedsel -->
+        <div class="menu-card">
+            <div class="menu-card-title"><span class="icon">🍽️</span> Voedsel</div>
+            <div class="menu-item"><span class="menu-item-name">Scake</span><span class="menu-item-price">10,00 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">Stosti</span><span class="menu-item-price">12,00 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">Tosti</span><span class="menu-item-price">4,00 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">Baguette Fromage</span><span class="menu-item-price">2,00 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">Arabiata</span><span class="menu-item-price">6,00 €</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mortadella met Mayonaise en Sbrood</span><span class="menu-item-price">15,00 €</span></div>
+        </div>
+
     </div>
 
-    <div class="content">
+    <div class="divider">✦ ✦ ✦</div>
 
-        <h2>Ons Aanbod</h2>
-
-        <table>
-          <tr><th>Softdrinks</th><th>Prijs</th></tr>
-          <tr><td>Cola</td><td>4€</td></tr>
-          <tr><td>Fanta</td><td>3€</td></tr>
-          <tr><td>Sprite</td><td>2€</td></tr>
-          <tr><td>Schweppes</td><td>5€</td></tr>
-
-          <tr><th>Cocktails</th><th>Prijs</th></tr>
-          <tr><td>De Stoner</td><td>4.20€</td></tr>
-          <tr><td>De Scoffe</td><td>6.70€</td></tr>
-          <tr><td>Pina Colada</td><td>8€</td></tr>
-          <tr><td>Mai Tai</td><td>6€</td></tr>
-          <tr><td>Mai Tai Infusion</td><td>9.50€</td></tr>
-
-          <tr><th>Mocktails</th><th>Prijs</th></tr>
-          <tr><td>Pina Colada ZA</td><td>6€</td></tr>
-          <tr><td>Dikke Loser</td><td>8€</td></tr>
-          <tr><td>Ik geloof niet in alcohol</td><td>2€</td></tr>
-
-          <tr><th>Voedsels</th><th>Prijs</th></tr>
-          <tr><td>Scake</td><td>10€</td></tr>
-          <tr><td>Stosti</td><td>12€</td></tr>
-          <tr><td>Tosti</td><td>4€</td></tr>
-          <tr><td>Baguette Fromage</td><td>2€</td></tr>
-          <tr><td>Arabiata</td><td>6€</td></tr>
-          <tr><td>Mortadella met mayonaise en Sbrood</td><td>15€</td></tr>
-        </table>
-
-
-        <h2>Voorwaarden</h2>
-        <p style="text-align:center;">Hier kun je later voorwaarden of huisregels toevoegen.</p>
-
-        <h2>Locatie</h2>
-        <p style="text-align:center;">Adres of Google Maps embed kan hier komen.</p>
-
-        <h2>Content</h2>
-        <p style="text-align:center;">Foto’s, video's of andere info kan hier worden geplaatst.</p>
-
+    <!-- VOORWAARDEN -->
+    <div style="margin-bottom: 10px;">
+        <div class="section-title">Voorwaarden</div>
     </div>
+    <p class="section-subtitle">Huisregels &amp; Info</p>
+    <p style="color: var(--cream); opacity: 0.6; font-style: italic; margin-bottom: 40px;">Inhoud volgt binnenkort…</p>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- LOCATIE -->
+    <div style="margin-bottom: 10px;">
+        <div class="section-title">Locatie</div>
+    </div>
+    <p class="section-subtitle">Vind ons</p>
+    <p style="color: var(--cream); opacity: 0.6; font-style: italic; margin-bottom: 40px;">Adresgegevens volgen binnenkort…</p>
+
+</main>
+
+<footer>
+    &copy; 2024 LudoSCafé &nbsp;·&nbsp; Alle rechten voorbehouden
+</footer>
 
 </body>
 </html>
