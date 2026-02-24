@@ -103,6 +103,29 @@
   transform: scale(2) rotate(-45deg);
   opacity: 0.3;
 }
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
 </style>
 </head>
 <body>
@@ -110,10 +133,16 @@
 <h2>Vince</h2>
 <p>Voorbeeldpagina voor animatie</p>
 
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">Home</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Leerling1</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Leerling2</button>
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="jan.html">Moessie</a>
+  <a href="RB.html">Rik</a>
+  <a class="active" href="Vince.html">Vince</a>
+  <a href="Liza.html">Liza</a>
+  <a href="joel.html">Joel</a>
+  <a href="Thiebe.html">Thiebe</a>
+  <a href="ludo.html">Ludo</a>
+  <a href="Ben.vannoten.html">Ben</a>
 </div>
 
 <div class="particle-deconstruct-container">
